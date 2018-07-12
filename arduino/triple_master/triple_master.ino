@@ -2,7 +2,7 @@
 #include <CapacitiveSensor.h>
 
 #define NUM_SAMPLES 30
-#define THRESHOLD 2500
+#define THRESHOLD 1000
 
 SoftwareSerial myComCat(8, 4); // RX, TX
 SoftwareSerial myComDog(5, 6); // 5MISO, RX / 6MOSI, TX
