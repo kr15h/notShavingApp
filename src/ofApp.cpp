@@ -39,6 +39,7 @@ void ofApp::setup(){
 	
 	#ifdef TARGET_RASPBERRY_PI
 		ofSetFullscreen(true);
+		ofHideCursor();
 	#endif
 }
 
