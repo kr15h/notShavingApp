@@ -11,6 +11,7 @@ public:
 	void exit();
 	
 	void mousePressed(int x, int y, int button);
+	void keyPressed(int key);
 	
 	ofSerial serial;
 	Animation anima;

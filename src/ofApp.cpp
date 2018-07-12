@@ -92,3 +92,9 @@ void ofApp::mousePressed(int x, int y, int button){
 		anima.play();
 	}
 }
+
+void ofApp::keyPressed(int key){
+	if(key == 'f'){
+		ofToggleFullscreen();
+	}
+}
