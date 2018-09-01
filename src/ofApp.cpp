@@ -10,10 +10,17 @@ void ofApp::setup(){
 
 	int baud = 9600;
 	bool serialSuccess;
+	std::string imageDir;
 	if(settingsSuccess == true){
 		std::string serialPort = settings.findFirst("settings/serialPort").getValue();
 		ofLog() << "serial port: " << serialPort;
 		serialSuccess = serial.setup(serialPort, baud);
+		imageDir = settings.findFirst("settings/imageDir").getValue();
+		if(imageDir != "" && imageDir.substr(imageDir.length() - 1, 1) != "/"){
+			imageDir += "/";
+		}
+		ofLog() << "image dir: " << imageDir;
+
 	}else{
 		ofLog() << "Failed to load settings";
 		serialSuccess = serial.setup(0, baud);
@@ -25,10 +32,10 @@ void ofApp::setup(){
 	}
 	
 	vector<std::string> sources;
-	sources.push_back("movin_00.png");
-	sources.push_back("movin_01.png");
-	sources.push_back("movin_02.png");
-	sources.push_back("movin_03.png");
+	sources.push_back(imageDir + "movin_00.png");
+	sources.push_back(imageDir + "movin_01.png");
+	sources.push_back(imageDir + "movin_02.png");
+	sources.push_back(imageDir + "movin_03.png");
 	
 	anima.setup(sources);
 	anima.frameRate = 15;

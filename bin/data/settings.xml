@@ -1,3 +1,4 @@
 <settings>
     <serialPort>ttyUSB0</serialPort>
+    <imageDir></imageDir>
 </settings>
